@@ -1,0 +1,7 @@
+*.csv
+*.xlsx
+*.json
+*.xml
+*.zip
+*.txt
+/env
