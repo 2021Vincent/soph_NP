@@ -16,5 +16,5 @@ engine = create_engine('sqlite:///:memory:')
 df.to_sql('AQI_table', engine, index=False)
 sql = pd.read_sql_query(f'SELECT `County` as `縣市`, `SiteName` as `區域`, \
     CAST(`PM2.5_AVG` AS int) as `PM2.5` FROM `AQI_table` \
-    WHERE `County` = {county} and `PM2.5` = {pm} order by CAST(`PM2.5_AVG` AS int) DESC', engine)
+    WHERE "County" = "臺北市" and CAST("PM2.5_AVG" AS int)>6 order by CAST(`PM2.5_AVG` AS int) DESC', engine)
 print(sql)
